@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="flex flex-col items-center p-4">
+    <h1 class="text-3xl font-bold mb-6">Área do Cliente</h1>
+    <div id="product-display" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Produtos disponíveis serão exibidos aqui -->
+    </div>
+    <div id="cart" class="mt-8 w-full max-w-lg">
+      <h2 class="text-xl font-semibold mb-4">Carrinho</h2>
+      <ul id="cart-items" class="space-y-4">
+        <!-- Itens do carrinho serão inseridos aqui -->
+      </ul>
+      <div class="text-right mt-4">
+        <p id="total-price" class="text-lg font-semibold">Total: R$ 0,00</p>
+        <button id="checkout-btn" class="mt-2 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none">
+          Finalizar Compra via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

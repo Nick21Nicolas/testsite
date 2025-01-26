@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md text-center w-full max-w-md">
+      <h1 class="text-3xl font-bold mb-6">Bem-vindo!</h1>
+      <p class="mb-4">Escolha sua interface:</p>
+      <div id="buttons" class="space-y-4">
+        <button 
+          onclick="showAdminLogin()"
+          class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none">
+          Acessar como Administrador
+        </button>
+        <button 
+          onclick="window.location.href='cliente.html'"
+          class="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none">
+          Acessar como Cliente
+        </button>
+      </div>
+      <div id="admin-login" class="mt-4 hidden">
+        <h2 class="text-lg font-semibold mb-2">Digite a senha de administrador:</h2>
+        <input 
+          type="password" 
+          id="admin-password" 
+          class="w-full border border-gray-300 p-2 rounded mb-4" 
+          placeholder="Senha">
+        <button 
+          onclick="authenticateAdmin()"
+          class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none">
+          Entrar
+        </button>
+        <button 
+          onclick="hideAdminLogin()"
+          class="w-full bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 mt-2 focus:outline-none">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const adminPassword = "0021";
+    function showAdminLogin() {
+      document.getElementById('buttons').classList.add('hidden');
+      document.getElementById('admin-login').classList.remove('hidden');
+    }
+    function hideAdminLogin() {
+      document.getElementById('buttons').classList.remove('hidden');
+      document.getElementById('admin-login').classList.add('hidden');
+    }
+    function authenticateAdmin() {
+      const inputPassword = document.getElementById('admin-password').value;
+      if (inputPassword === adminPassword) {
+        window.location.href = 'admin.html';
+      } else {
+        alert("Senha incorreta! Tente novamente.");
+      }
+    }
+  </script>
+</body>
+</html>
